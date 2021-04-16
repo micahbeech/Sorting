@@ -9,6 +9,13 @@ import Foundation
 
 class BogoSort : Sorter {
     
+    /*
+     Bogo sort:
+       - If the array is sorted, we're done
+       - Otherwise, shuffle it
+       - Repeat
+     */
+    
     var isDone = false
     var stepDelay = 5
     

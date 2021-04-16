@@ -10,22 +10,26 @@ import Foundation
 let SORTING_ALGORITHMS = [
     "Selection",
     "Insertion",
-    "Bogo",
-    "Bubble"
+    "Bubble",
+    "Merge",
+    "Bogo"
 ]
 
 func getSorter(algorithm: String) -> Sorter? {
-    if algorithm == "Selection" {
+    switch (algorithm) {
+    case "Selection":
         return SelectionSort()
-    } else if algorithm == "Insertion" {
+    case "Insertion":
         return InsertionSort()
-    } else if algorithm == "Bogo" {
+    case "Bogo":
         return BogoSort()
-    } else if algorithm == "Bubble" {
+    case "Bubble":
         return BubbleSort()
+    case "Merge":
+        return MergeSort()
+    default:
+        return nil
     }
-    
-    return nil
 }
 
 protocol Sorter {

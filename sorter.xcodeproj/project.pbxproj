@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B4081B7C2629DC4000A34352 /* BubbleSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4081B7B2629DC4000A34352 /* BubbleSort.swift */; };
 		B4081B7F2629E40D00A34352 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4081B7E2629E40D00A34352 /* Constants.swift */; };
+		B4081B862629E60300A34352 /* MergeSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4081B852629E60300A34352 /* MergeSort.swift */; };
 		B4B9E2932628EC6F009B3F2B /* sorterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B9E2922628EC6F009B3F2B /* sorterApp.swift */; };
 		B4B9E2952628EC6F009B3F2B /* SorterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B9E2942628EC6F009B3F2B /* SorterView.swift */; };
 		B4B9E2972628EC70009B3F2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4B9E2962628EC70009B3F2B /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		B4081B7B2629DC4000A34352 /* BubbleSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleSort.swift; sourceTree = "<group>"; };
 		B4081B7E2629E40D00A34352 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B4081B852629E60300A34352 /* MergeSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeSort.swift; sourceTree = "<group>"; };
 		B4B9E28F2628EC6F009B3F2B /* sorter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sorter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4B9E2922628EC6F009B3F2B /* sorterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sorterApp.swift; sourceTree = "<group>"; };
 		B4B9E2942628EC6F009B3F2B /* SorterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SorterView.swift; sourceTree = "<group>"; };
@@ -49,6 +51,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B4081B812629E55A00A34352 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B4B9E2B226291A52009B3F2B /* HomeView.swift */,
+				B4B9E2942628EC6F009B3F2B /* SorterView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B4081B822629E57000A34352 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B4B9E2A22628EF09009B3F2B /* Model.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B4081B832629E57800A34352 /* Extras */ = {
+			isa = PBXGroup;
+			children = (
+				B4081B7E2629E40D00A34352 /* Constants.swift */,
+			);
+			path = Extras;
+			sourceTree = "<group>";
+		};
 		B4B9E2862628EC6F009B3F2B = {
 			isa = PBXGroup;
 			children = (
@@ -69,11 +96,10 @@
 			isa = PBXGroup;
 			children = (
 				B4B9E2922628EC6F009B3F2B /* sorterApp.swift */,
-				B4B9E2B226291A52009B3F2B /* HomeView.swift */,
-				B4B9E2942628EC6F009B3F2B /* SorterView.swift */,
-				B4B9E2A22628EF09009B3F2B /* Model.swift */,
-				B4081B7E2629E40D00A34352 /* Constants.swift */,
+				B4081B812629E55A00A34352 /* Views */,
+				B4081B822629E57000A34352 /* Models */,
 				B4B9E2B126291A32009B3F2B /* Sorting */,
+				B4081B832629E57800A34352 /* Extras */,
 				B4B9E2962628EC70009B3F2B /* Assets.xcassets */,
 				B4B9E29B2628EC70009B3F2B /* Info.plist */,
 				B4B9E2982628EC70009B3F2B /* Preview Content */,
@@ -97,6 +123,7 @@
 				B4B9E2AB262911BB009B3F2B /* InsertionSort.swift */,
 				B4B9E2AE2629194B009B3F2B /* BogoSort.swift */,
 				B4081B7B2629DC4000A34352 /* BubbleSort.swift */,
+				B4081B852629E60300A34352 /* MergeSort.swift */,
 			);
 			path = Sorting;
 			sourceTree = "<group>";
@@ -170,6 +197,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4081B862629E60300A34352 /* MergeSort.swift in Sources */,
 				B4B9E2A32628EF09009B3F2B /* Model.swift in Sources */,
 				B4B9E2952628EC6F009B3F2B /* SorterView.swift in Sources */,
 				B4B9E2AF2629194B009B3F2B /* BogoSort.swift in Sources */,
