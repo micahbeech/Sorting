@@ -7,13 +7,13 @@
 
 import Foundation
 
-let SORTING_ALGORITHMS = [
-    "Selection",
-    "Insertion",
-    "Bubble",
-    "Merge",
-    "Bogo"
-]
+protocol Sorter {
+    var isDone: Bool { get }
+    var stepDelay: Int { get }
+    func step(_ items: inout [Int])
+    func reset()
+}
+
 
 func getSorter(algorithm: String) -> Sorter? {
     switch (algorithm) {
@@ -27,14 +27,9 @@ func getSorter(algorithm: String) -> Sorter? {
         return BubbleSort()
     case "Merge":
         return MergeSort()
+    case "Heap":
+        return HeapSort()
     default:
         return nil
     }
-}
-
-protocol Sorter {
-    var isDone: Bool { get }
-    var stepDelay: Int { get }
-    func step(_ items: inout [Int])
-    func reset()
 }

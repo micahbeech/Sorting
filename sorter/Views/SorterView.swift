@@ -29,11 +29,11 @@ struct SorterView: View {
             .padding(.leading)
             
             GeometryReader { geo in
-                VStack(alignment: .leading, spacing: 2) {
+                VStack(alignment: .leading, spacing: 1) {
                     ForEach(model.items.indices) { index in
                         Rectangle()
                             .foregroundColor(.init(red: Double(index) / Double(model.items.count) + 0.8, green: Double(model.items[index]) / Double(model.maxItem * 2) + 0.2, blue: 0))
-                            .frame(width: CGFloat(model.items[index]) * geo.size.width / CGFloat(model.maxItem), height: geo.size.height / CGFloat(model.items.count) - 2)
+                            .frame(width: CGFloat(model.items[index]) * geo.size.width / CGFloat(model.maxItem), height: geo.size.height / CGFloat(model.items.count) - 1)
                     }
                 }
             }

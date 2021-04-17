@@ -10,3 +10,12 @@ import Foundation
 let MS_IN_SEC = 1000
 let MIN_ARRAY_SIZE = 5
 let MAX_ARRAY_SIZE = 200
+
+let SORTING_ALGORITHMS = [
+    "Selection",
+    "Insertion",
+    "Bubble",
+    "Merge",
+    "Heap",
+    "Bogo"
+]
