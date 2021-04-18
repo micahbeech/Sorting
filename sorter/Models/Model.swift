@@ -46,6 +46,7 @@ class Model : ObservableObject {
     }
     
     func sort() {
+        if timer.isValid { return }
         sortTime = 0
         timer = Timer.scheduledTimer(
             timeInterval: 1 / Double(MS_IN_SEC),

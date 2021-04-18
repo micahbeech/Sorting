@@ -21,6 +21,7 @@
 		B4B9E2AC262911BB009B3F2B /* InsertionSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B9E2AB262911BB009B3F2B /* InsertionSort.swift */; };
 		B4B9E2AF2629194B009B3F2B /* BogoSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B9E2AE2629194B009B3F2B /* BogoSort.swift */; };
 		B4B9E2B326291A52009B3F2B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B9E2B226291A52009B3F2B /* HomeView.swift */; };
+		B4CAA280262CC4FD00A8E758 /* QuickSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CAA27F262CC4FD00A8E758 /* QuickSort.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		B4B9E2AB262911BB009B3F2B /* InsertionSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertionSort.swift; sourceTree = "<group>"; };
 		B4B9E2AE2629194B009B3F2B /* BogoSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BogoSort.swift; sourceTree = "<group>"; };
 		B4B9E2B226291A52009B3F2B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		B4CAA27F262CC4FD00A8E758 /* QuickSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickSort.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 				B4081B7B2629DC4000A34352 /* BubbleSort.swift */,
 				B4081B852629E60300A34352 /* MergeSort.swift */,
 				B4998262262A58A80033A2E1 /* HeapSort.swift */,
+				B4CAA27F262CC4FD00A8E758 /* QuickSort.swift */,
 			);
 			path = Sorting;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 				B4B9E2A32628EF09009B3F2B /* Model.swift in Sources */,
 				B4B9E2952628EC6F009B3F2B /* SorterView.swift in Sources */,
 				B4B9E2AF2629194B009B3F2B /* BogoSort.swift in Sources */,
+				B4CAA280262CC4FD00A8E758 /* QuickSort.swift in Sources */,
 				B4B9E2A626290C47009B3F2B /* Sorter.swift in Sources */,
 				B4B9E2AC262911BB009B3F2B /* InsertionSort.swift in Sources */,
 				B4081B7F2629E40D00A34352 /* Constants.swift in Sources */,

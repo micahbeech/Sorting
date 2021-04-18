@@ -17,5 +17,6 @@ let SORTING_ALGORITHMS = [
     "Bubble",
     "Merge",
     "Heap",
+    "Quick",
     "Bogo"
 ]

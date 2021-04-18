@@ -18,7 +18,7 @@ class MergeSort : Sorter {
      */
     
     var isDone = false
-    var stepDelay = 4
+    var stepDelay = 6
     
     // Variables to store the state of the current step
     var merges = [(Int, Int)]() // The indidces of merges we still need to perform

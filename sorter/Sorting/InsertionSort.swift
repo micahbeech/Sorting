@@ -18,7 +18,7 @@ class InsertionSort : Sorter {
      */
     
     var isDone = false
-    var stepDelay = 50
+    var stepDelay = 40
     var nextIndex = 0
     
     func step(_ items: inout [Int]) {

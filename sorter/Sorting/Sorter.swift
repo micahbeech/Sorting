@@ -29,6 +29,8 @@ func getSorter(algorithm: String) -> Sorter? {
         return MergeSort()
     case "Heap":
         return HeapSort()
+    case "Quick":
+        return QuickSort()
     default:
         return nil
     }
