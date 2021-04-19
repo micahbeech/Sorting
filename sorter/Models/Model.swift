@@ -25,11 +25,7 @@ class Model : ObservableObject {
         self.numItems = arraySize
         self.sorter = getSorter(algorithm: algorithm)
         self.ITEM_MAX = arraySize
-        
-        // Choose a delay proportional to the size of the array
-        // This doesn't scale perfectly but it's simple and works well enough
-        self.TIMER_DELAY = sorter.stepDelay * MAX_ARRAY_SIZE / arraySize
-        
+        self.setTimerDelay(arraySize: arraySize)
         self.resetItems()
     }
     
@@ -57,14 +53,24 @@ class Model : ObservableObject {
         )
     }
     
+    func setTimerDelay(arraySize: Int) {
+        // Choose a delay proportional to the size of the array
+        // This doesn't scale perfectly but it's simple and works well enough
+        self.TIMER_DELAY = sorter.stepDelay * MAX_ARRAY_SIZE / arraySize
+    }
+    
     @objc func timerFired() {
         if sorter.isDone {
             if timer.isValid { timer.invalidate() }
             return
         }
+        
+        setTimerDelay(arraySize: items.count)
+        
         if sortTime % TIMER_DELAY == 0 {
             sorter.step(&items)
         }
+        
         sortTime += 1
     }
     

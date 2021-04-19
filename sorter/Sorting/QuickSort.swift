@@ -19,24 +19,21 @@ class QuickSort : Sorter {
      */
     
     var isDone = false
-    var stepDelay = 10
-    let RANDOM_CUTOFF = 10
+    var stepDelay = 50
+    
+    let RANDOM_CUTOFF = 10 // Point at which to stop partitioning and use insertion sort
     
     // Quicksort state
-    var S = [(Int, Int)]()
-    var i = 0
-    var r = 0
-    var l = 0
-    var step0 = false
-    var step1 = false
-    var step2 = false
+    var S = [(Int, Int)]() // Stack of partitions
+    var l = 0 // Beginning index of current partition
+    var r = 0 // End index of current partition
     
     // Partitioning state
     var partitioning = false
-    var midPartitioning = false
-    var p = 0
-    var j = 0
-    var v = 0
+    var p = 0 // Pivot
+    var i = 0 // Start of "equal to pivot" subarray
+    var j = 0 // End index for partitioning
+    var v = 0 // Value of pivot
     
     // Insertion state
     var inserting = false
@@ -47,16 +44,10 @@ class QuickSort : Sorter {
             insertionStep(&items)
         } else if partitioning {
             partitionStep(&items)
-        } else if step0 {
-            quickStep0(&items)
-        } else if step1 {
-            quickStep1(&items)
-        } else if step2 {
-            quickStep2(&items)
         } else {
             // First iteration, initialize the stack
             S.append((0, items.count - 1))
-            step0 = true
+            quickStep0(&items)
         }
     }
     
@@ -64,6 +55,7 @@ class QuickSort : Sorter {
         // If there are no more ranges, insertion sort
         if S.isEmpty {
             inserting = true
+            stepDelay = 7
             return
         }
         
@@ -71,21 +63,18 @@ class QuickSort : Sorter {
         let pair = S.removeLast()
         l = pair.0
         r = pair.1
-        step0 = false
-        step1 = true
+        quickStep1(&items)
     }
     
     func quickStep1(_ items: inout [Int]) {
         // If we are in the cutoff, choose a pivot and partition
         if r - l >= RANDOM_CUTOFF {
             p = choosePivot(start: l, end: r)
-            step1 = false
-            partitioning = true
+            partitionStep(&items)
             
         // Otherwise, go back to step 0
         } else {
-            step1 = false
-            step0 = true
+            quickStep0(&items)
         }
     }
     
@@ -100,13 +89,13 @@ class QuickSort : Sorter {
         }
         
         // Return to step 1
-        step2 = false
-        step1 = true
+        quickStep1(&items)
     }
     
+    // Partition in place using Hoare's algorithm
     func partitionStep(_ items: inout [Int]) {
-        // If we already started partitioning, continue
-        if midPartitioning {
+        
+        if partitioning {
             // Get next indices
             repeat { i += 1 } while (i < r + 1 && items[i] < v)
             repeat { j -= 1 } while (j > l && items[j] > v)
@@ -114,9 +103,8 @@ class QuickSort : Sorter {
             // If we crossed, we are done, so swap last elements and go to step 2
             if i >= j {
                 items.swapAt(l, i)
-                midPartitioning = false
                 partitioning = false
-                step2 = true
+                quickStep2(&items)
                 
             // We didn't cross, swap and keep partitioning
             } else {
@@ -129,7 +117,7 @@ class QuickSort : Sorter {
             j = r
             v = items[r]
             items.swapAt(r, p)
-            midPartitioning = true
+            partitioning = true
         }
     }
     
@@ -162,20 +150,23 @@ class QuickSort : Sorter {
     
     func reset() {
         isDone = false
+        stepDelay = 15
         
+        // Quicksort state
         S.removeAll()
-        i = 0
-        r = 0
         l = 0
-        step0 = false
-        step1 = false
-        step2 = false
+        r = 0
         
-        inserting = false
-        nextIndex = 0
-        
+        // Partitioning state
         partitioning = false
         p = 0
+        i = 0
+        j = 0
+        v = 0
+        
+        // Insertion state
+        inserting = false
+        nextIndex = 0
     }
     
 }
