@@ -27,7 +27,7 @@ struct HomeView: View {
                         .font(.title)
 
                     Picker("Algorithm", selection: $algorithmIndex) {
-                        ForEach(SORTING_ALGORITHMS.indices) { index in
+                        ForEach(SORTING_ALGORITHMS.indices, id: \.self) { index in
                             Text("\(SORTING_ALGORITHMS[index]) Sort")
                         }
                     }
