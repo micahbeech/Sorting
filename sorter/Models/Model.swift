@@ -8,7 +8,6 @@
 import Foundation
 
 class Model : ObservableObject {
-    
     var ITEM_MIN = 1
     var ITEM_MAX = 100
     var TIMER_DELAY = 100
@@ -33,7 +32,7 @@ class Model : ObservableObject {
         if timer.isValid { timer.invalidate() }
         sortTime = 0
         sorter.reset()
-        items.removeAll()
+        items.removeAll(keepingCapacity: true)
         if numItems < 1 { return }
         for _ in 1...numItems {
             items.append(.random(in: ITEM_MIN...ITEM_MAX))

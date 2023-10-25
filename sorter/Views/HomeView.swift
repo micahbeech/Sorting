@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct HomeView: View {
-    
     @State private var arraySize = 100.0
-    @State private var algorithmIndex = (SORTING_ALGORITHMS.count - 1) / 2
+    @State private var algorithmIndex = 0
     
     var body: some View {
         NavigationView {
